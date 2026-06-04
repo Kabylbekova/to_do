@@ -1,9 +1,11 @@
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import TaskViewSet
 
-from django.urls import path
-from .views import ViewBlog
+router = DefaultRouter()
+router.register(r"tasks", TaskViewSet, basename="task")
 
 urlpatterns = [
-    path('api/', ViewBlog.as_view({'get':'list'}), name='blog-list'),
-    
-    
+    path("api/", include(router.urls)),
 ]
+
