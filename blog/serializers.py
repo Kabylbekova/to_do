@@ -1,10 +1,9 @@
 from rest_framework import serializers
-from .models import Blog 
+from .models import Task
 
 
-class BlogSerializers(serializers.ModelSerializer):
+class TaskSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blog 
-        
-    fields = '__all__'
-    
+        model = Task
+        fields = "__all__"
+
